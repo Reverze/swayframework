@@ -31,12 +31,5 @@
         "psr-4": {
             "Sway\\Component\\": "src/"
         }
-    },
-    "config": {
-        "secure-http": false
-    },
-    "repositories": [{
-        "type": "composer",
-        "url": "http://packagist.swayware.eu"
-    }]
+    }
 }
