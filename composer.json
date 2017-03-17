@@ -29,7 +29,8 @@
         "rev/sway-framework-filters": "dev-dev",
         "rev/sway-framework-utils": "dev-dev",
         "rev/sway-monolog-client": "dev-dev",
-        "rev/sway-framework-console": "dev-dev"
+        "rev/sway-framework-console": "dev-dev",
+        "rev/sway-expage": "dev-dev"
     },
     "autoload": {
         "psr-4": {
