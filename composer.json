@@ -1,0 +1,39 @@
+{
+    "name": "rev/sway-framework-standard",
+    "description": "Swayframework Standard Distribution",
+    "type": "sf-package",
+    "authors": [
+        {
+            "name": "Reverze",
+            "email": "hawkmedia24@gmail.com"
+        }
+    ],
+    "support": {
+        "email": "hawkmedia24@gmail.com"
+    },
+    "license": "GPL-3.0",
+    "require": {
+        "sc0/rest-client": "^0.1.3",
+        "doctrine/cache": "^1.6",
+        "devster/ubench": "^1.2",
+        "symfony/yaml": "^3.2",
+        "rev/sway-framework-controller": "dev-dev",
+        "rev/sway-framework-distribution": "dev-dev",
+        "rev/sway-framework-event": "dev-dev",
+        "rev/sway-framework-httpd": "dev-dev",
+        "rev/sway-framework-parameter": "dev-dev",
+        "rev/sway-framework-service": "dev-dev",
+        "rev/sway-framework-routing": "dev-dev",
+        "rev/sway-framework-http": "dev-dev",
+        "rev/sway-framework-autoload": "dev-dev",
+        "rev/sway-framework-filters": "dev-dev",
+        "rev/sway-framework-utils": "dev-dev",
+        "rev/sway-monolog-client": "dev-dev",
+        "rev/sway-framework-console": "dev-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sway\\Component\\": "src/"
+        }
+    }
+}
