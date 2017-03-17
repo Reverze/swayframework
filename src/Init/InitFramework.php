@@ -6,6 +6,7 @@ use Sway\Component\Dependency\DependencyInterface;
 use Sway\Component\Dependency\DependencyInjector;
 use Sway\Distribution\FrameworkDistribution;
 use Sway\Component\Console;
+use Rev\ExPage;
 
 
 class InitFramework extends DependencyInterface
@@ -63,6 +64,12 @@ class InitFramework extends DependencyInterface
      * @var \Sway\Distribution\Storage\Channel
      */
     private $configurationChannel = null;
+
+    /**
+     * Error pages manager
+     * @var \Rev\ExPage\Manager
+     */
+    private $exPage = null;
     
     public function __construct(string $applicationWorkingDirectory, string $frameworkWorkingDirectory)
     {
@@ -118,6 +125,35 @@ class InitFramework extends DependencyInterface
     {
         return $this->frameworkWorkingDirectory;
     }
+
+    /**
+     * Initializes ExPage extension (only in 'dev' mode)
+     */
+    protected function initializeExPage()
+    {
+        $this->exPage = new ExPage\Manager([
+            'dirname' => sprintf("%s/tmp/expage_logs/", $this->applicationWorkingDirectory),
+            'filelog' => 'default.log',
+            'template' => 'default',
+            'separate' => [
+                'errors' => 'errors.log',
+                'exceptions' => 'exceptions.logs'
+            ],
+            'mode' => 'dev',
+            'cli_view' => [
+                'error' => [
+                    'show_file' => true,
+                    'show_line' => true,
+                    'show_scope' => true
+                ],
+                'exception' => [
+                    'show_file' => true,
+                    'show_line' => true,
+                    'show_trace' => true
+                ]
+            ]
+        ]);
+    }
     
     /**
      * Inits standard framework configuration
@@ -129,8 +165,14 @@ class InitFramework extends DependencyInterface
         $this->dependencyInjector->createDependency('config', $initConfig);
         
         $this->initConfig = $initConfig;
-       
-        
+
+        /**
+         * ExPage runs only in 'dev' mode
+         */
+        if ($this->getRunningMode() === 'dev'){
+            $this->initializeExPage();
+        }
+
         /**
          * If framework is running in production mode
          */
