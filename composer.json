@@ -1,6 +1,6 @@
 {
     "name": "rev/sway-framework-standard",
-    "description": "SwayFramework Standard Distribution",
+    "description": "Swayframework Standard Distribution",
     "type": "sf-package",
     "authors": [
         {
@@ -8,24 +8,28 @@
             "email": "hawkmedia24@gmail.com"
         }
     ],
+    "support": {
+        "email": "hawkmedia24@gmail.com"
+    },
+    "license": "GPL-3.0",
     "require": {
         "sc0/rest-client": "^0.1.3",
         "doctrine/cache": "^1.6",
         "devster/ubench": "^1.2",
         "symfony/yaml": "^3.2",
-        "rev/sway-framework-controller": "dev-master",
-        "rev/sway-framework-distribution": "dev-master",
-        "rev/sway-framework-event": "dev-master",
-        "rev/sway-framework-httpd": "dev-master",
-        "rev/sway-framework-parameter": "dev-master",
-        "rev/sway-framework-service": "dev-master",
-        "rev/sway-framework-routing": "dev-master",
-        "rev/sway-framework-http": "dev-master",
-        "rev/sway-framework-autoload": "dev-master",
-        "rev/sway-framework-filters": "dev-master",
-        "rev/sway-framework-utils": "dev-master",
-        "rev/sway-monolog-client": "dev-master",
-        "rev/sway-framework-console": "dev-master"
+        "rev/sway-framework-controller": "dev-dev",
+        "rev/sway-framework-distribution": "dev-dev",
+        "rev/sway-framework-event": "dev-dev",
+        "rev/sway-framework-httpd": "dev-dev",
+        "rev/sway-framework-parameter": "dev-dev",
+        "rev/sway-framework-service": "dev-dev",
+        "rev/sway-framework-routing": "dev-dev",
+        "rev/sway-framework-http": "dev-dev",
+        "rev/sway-framework-autoload": "dev-dev",
+        "rev/sway-framework-filters": "dev-dev",
+        "rev/sway-framework-utils": "dev-dev",
+        "rev/sway-monolog-client": "dev-dev",
+        "rev/sway-framework-console": "dev-dev"
     },
     "autoload": {
         "psr-4": {
