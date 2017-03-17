@@ -132,7 +132,7 @@ class InitFramework extends DependencyInterface
     protected function initializeExPage()
     {
         $this->exPage = new ExPage\Manager(true, [
-            'dirname' => sprintf("%s/tmp/expage_logs/", $this->applicationWorkingDirectory),
+            'dirname' => sprintf("%s/tmp/expage_logs/", dirname($this->applicationWorkingDirectory)),
             'filelog' => 'default.log',
             'template' => 'default',
             'separate' => [
