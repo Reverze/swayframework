@@ -145,12 +145,12 @@ class InitFramework extends DependencyInterface
                 'error' => [
                     'show_file' => true,
                     'show_line' => true,
-                    'show_scope' => true
+                    'show_scope' => false
                 ],
                 'exception' => [
                     'show_file' => true,
                     'show_line' => true,
-                    'show_trace' => true
+                    'show_trace' => false
                 ]
             ]
         ]);
